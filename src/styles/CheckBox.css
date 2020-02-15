@@ -1,0 +1,16 @@
+.custom-control-lg .custom-control-label::before, .custom-control-lg .custom-control-label::after {
+    top: 0rem !important;
+    left: -2rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+
+.custom-control-lg .custom-control-label {
+    margin-left: 0.5rem !important;
+    font-size: 1rem !important;
+}
+
+.checkbox-disabled, .checkbox-disabled:disabled {
+    color: #6c757d;
+    background-color: #fff;
+}
