@@ -1,0 +1,4 @@
+.card-disabled, .card-disabled:disabled {
+    color: #6c757d;
+    background-color: #fff;
+}

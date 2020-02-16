@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import CheckBox from './CheckBox';
 import ConditionalWrapper from './ConditionalWrapper';
 import { ITodo } from '../interfaces';
+import '../styles/TodoCard.css'
 
 export interface ITodoCardProps {
     todo: ITodo;
@@ -21,7 +22,7 @@ export default class TodoCard extends Component<ITodoCardProps, ITodoCardState>{
 
     render(): JSX.Element {
         return (
-            <ListGroup.Item className={this.props.todo.completed ? 'checkbox-disabled' : ''}>
+            <ListGroup.Item className={this.props.todo.completed ? 'card-disabled' : ''}>
                 <Card >
                     <ConditionalWrapper
                         condition={this.props.todo.completed}
