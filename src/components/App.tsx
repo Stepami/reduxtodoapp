@@ -16,7 +16,6 @@ const App: FunctionComponent<IAppProps> = () =>
         </Row>
         <Row>
             <Col>
-                {/* place for container*/}
                 <TodoList></TodoList>
             </Col>
         </Row>

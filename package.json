@@ -5,7 +5,7 @@
   "description": "todo list app built with react-redux",
   "scripts": {
     "serve": "webpack-dev-server --mode development --open --hot --watch",
-    "build": "webpack --mode production"
+    "build": "webpack -p --mode production"
   },
   "author": {
     "name": "Stepami",

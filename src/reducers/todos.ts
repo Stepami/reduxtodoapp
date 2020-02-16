@@ -1,4 +1,4 @@
-import * as constants from '../actions/todos/constants';
+import TodosConstants from '../actions/todos/constants';
 import TodosActionTypes from '../actions/todos/types';
 import { ITodo, ITodosState } from '../interfaces';
 
@@ -26,24 +26,24 @@ function orderTodos(todos: ITodo[]): ITodo[] {
 
 export default function todosReducer(state = initialState, action: TodosActionTypes): ITodosState {
     switch (action.type) {
-        case constants.TODOS_IS_LOADING:
+        case TodosConstants.TODOS_IS_LOADING:
             return {
                 ...state,
                 isLoading: <boolean>action.payload
             };
-        case constants.TODOS_FETCH_DATA_SUCCESS:
+        case TodosConstants.TODOS_FETCH_DATA_SUCCESS:
             return {
                 isLoading: false,
                 items: orderTodos(<ITodo[]>action.payload),
                 err: null
             };
-        case constants.TODOS_HAS_ERRORED:
+        case TodosConstants.TODOS_HAS_ERRORED:
             return {
                 ...state,
                 isLoading: false,
                 err: <string>action.payload
             };
-        case constants.TODOS_ITEM_TOGGLED:
+        case TodosConstants.TODOS_ITEM_TOGGLED:
             const items = state.items.slice();
             const index = items.findIndex(x => x.id === <number>action.payload);
             items[index].completed = !items[index].completed;
