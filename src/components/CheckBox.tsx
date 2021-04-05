@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react'
 import '../styles/CheckBox.css'
 
 interface ICheckBoxProps {
@@ -19,6 +19,6 @@ const CheckBox: FunctionComponent<ICheckBoxProps> = (props: ICheckBoxProps) =>
         ></input>
         <label className="custom-control-label text-dark font-weight-bold"
             htmlFor={props.id}>{props.labelText}</label>
-    </div>;
+    </div>
 
-export default CheckBox;
+export default CheckBox

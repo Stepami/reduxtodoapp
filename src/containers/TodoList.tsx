@@ -13,9 +13,8 @@ interface ITodoListProps extends ITodosState {
     toggleTodo: (todoId: number) => object;
 }
 
-type ITodoListState = {};
 
-class TodoList extends Component<ITodoListProps, ITodoListState>{
+class TodoList extends Component<ITodoListProps> {
     constructor(props: ITodoListProps) {
         super(props);
     }

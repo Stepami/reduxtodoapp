@@ -1,8 +1,8 @@
 {
-  "name": "reduxtodoapp",
+  "name": "mobxtodoapp",
   "version": "1.0.0",
-  "repository": "github:Stepami/reduxtodoapp",
-  "description": "todo list app built with react-redux",
+  "repository": "github:Stepami/mobxtodoapp",
+  "description": "todo list app built with mobx",
   "scripts": {
     "serve": "webpack-dev-server --mode development --open --hot --watch",
     "build": "webpack -p --mode production"
@@ -16,21 +16,18 @@
   "dependencies": {
     "axios": ">=0.21.1",
     "bootstrap": "^4.4.1",
+    "mobx": "^6.1.8",
+    "mobx-react": "^7.1.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
-    "react-flip-move": "^3.0.4",
-    "react-redux": "^7.1.3",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "react-flip-move": "^3.0.4"
   },
   "devDependencies": {
     "@types/bootstrap": "^4.3.1",
     "@types/react": "^16.9.19",
     "@types/react-bootstrap": "^0.32.20",
     "@types/react-dom": "^16.9.5",
-    "@types/react-redux": "^7.1.7",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^3.2.0",

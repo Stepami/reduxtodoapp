@@ -1,9 +1,9 @@
-import React, { Component, Children } from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Card from 'react-bootstrap/Card';
-import CheckBox from './CheckBox';
-import ConditionalWrapper from './ConditionalWrapper';
-import { ITodo } from '../interfaces';
+import React, { Component, Children } from 'react'
+import ListGroup from 'react-bootstrap/ListGroup'
+import Card from 'react-bootstrap/Card'
+import CheckBox from './CheckBox'
+import ConditionalWrapper from './ConditionalWrapper'
+import { ITodo } from '../interfaces'
 import '../styles/TodoCard.css'
 
 export interface ITodoCardProps {
@@ -13,11 +13,9 @@ export interface ITodoCardProps {
     checkBoxCallBack: () => void;
 }
 
-type ITodoCardState = {};
-
-export default class TodoCard extends Component<ITodoCardProps, ITodoCardState>{
+export default class TodoCard extends Component<ITodoCardProps> {
     constructor(props: ITodoCardProps) {
-        super(props);
+        super(props)
     }
 
     render(): JSX.Element {
@@ -37,6 +35,6 @@ export default class TodoCard extends Component<ITodoCardProps, ITodoCardState>{
                     </ConditionalWrapper>
                 </Card>
             </ListGroup.Item>
-        );
+        )
     }
 }

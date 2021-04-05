@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react'
 
 interface IConditionalWrapperProps {
     condition: boolean;
@@ -7,6 +7,6 @@ interface IConditionalWrapperProps {
 }
 
 const ConditionalWrapper: FunctionComponent<IConditionalWrapperProps> = (props: IConditionalWrapperProps) =>
-    props.condition ? props.wrapper(props.children) : props.children;
+    props.condition ? props.wrapper(props.children) : props.children
 
-export default ConditionalWrapper;
+export default ConditionalWrapper

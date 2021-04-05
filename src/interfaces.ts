@@ -6,8 +6,8 @@ export interface ITodo {
 }
 
 export interface IGeo {
-    lat: string;
-    lng: string;
+    lat: string
+    lng: string
 }
 
 export interface IAddress {
@@ -33,15 +33,4 @@ export interface IUser {
     phone: string;
     website: string;
     company: ICompany;
-}
-
-export interface IAction<T extends string, P> {
-    type: T;
-    payload: P;
-}
-
-export interface ITodosState {
-    isLoading: boolean;
-    items: ITodo[];
-    err: string | null;
 }

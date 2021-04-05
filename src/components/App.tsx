@@ -1,13 +1,11 @@
-import React, { FunctionComponent } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Header from './Header';
-import TodoList from '../containers/TodoList';
+import React, { FunctionComponent } from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Header from './Header'
+import TodoList from '../containers/TodoList'
 
-type IAppProps = {};
-
-const App: FunctionComponent<IAppProps> = () =>
+const App: FunctionComponent = () =>
     <Container>
         <Row>
             <Col>
@@ -19,6 +17,6 @@ const App: FunctionComponent<IAppProps> = () =>
                 <TodoList></TodoList>
             </Col>
         </Row>
-    </Container>;
+    </Container>
 
-export default App;
+export default App
