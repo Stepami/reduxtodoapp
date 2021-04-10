@@ -3,14 +3,14 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Card from 'react-bootstrap/Card'
 import CheckBox from './CheckBox'
 import ConditionalWrapper from './ConditionalWrapper'
-import { ITodo } from '../interfaces'
 import '../styles/TodoCard.css'
+import { Todo } from '../models'
 
-export interface ITodoCardProps {
-    todo: ITodo;
-    owner: string;
-    checkBoxId: number;
-    checkBoxCallBack: () => void;
+interface ITodoCardProps {
+    todo: Todo
+    owner: string
+    checkBoxId: number
+    checkBoxCallBack: () => void
 }
 
 export default class TodoCard extends Component<ITodoCardProps> {
