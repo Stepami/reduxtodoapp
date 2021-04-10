@@ -1,30 +1,35 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import ListGroup from 'react-bootstrap/ListGroup';
-import FlipMove from 'react-flip-move';
-import TodoCard from '../components/TodoCard';
-import { ITodo, ITodosState } from '../interfaces';
-import todosService, { TodoThunkDispatch } from '../services/todos';
-import { StateType } from '../store';
-import { todosItemToggled } from '../actions/todos/creators';
+import React, { Component } from 'react'
+import ListGroup from 'react-bootstrap/ListGroup'
+import FlipMove from 'react-flip-move'
+import TodoCard from '../components/TodoCard'
+import { makeArrApiRequest } from '../services/api';
+import { TodosStore } from '../stores';
 
-interface ITodoListProps extends ITodosState {
-    fetchData: () => void;
-    toggleTodo: (todoId: number) => object;
+type TodoListProps = {
+    store: TodosStore;
 }
-
-
-class TodoList extends Component<ITodoListProps> {
-    constructor(props: ITodoListProps) {
+class Todo {
+    constructor() {
+        //makeAutoObservable(this)
+    }
+    userId: number = 0
+    id: number = 0
+    title: string = ''
+    completed: boolean = false
+}
+export class TodoList extends Component<TodoListProps> {
+    constructor(props: TodoListProps) {
         super(props);
     }
 
     componentDidMount() {
-        this.props.fetchData();
+        makeArrApiRequest(Todo, { url: 'https://jsonplaceholder.typicode.com/todos', method: 'get' }).then(r => {
+            console.log(r)
+        })
     }
 
     render(): JSX.Element {
-        if (this.props.err !== null) {
+        /*if (this.props.err !== null) {
             return (
                 <div>
                     <p>Sorry! There was an error loading the items</p>
@@ -35,9 +40,9 @@ class TodoList extends Component<ITodoListProps> {
 
         if (this.props.isLoading) {
             return <p>Loading…</p>;
-        }
+        }*/
 
-        return (
+        return (<></>/*
             <ListGroup>
                 <FlipMove
                     typeName={null}
@@ -58,24 +63,7 @@ class TodoList extends Component<ITodoListProps> {
                         );
                     })}
                 </FlipMove>
-            </ListGroup>
+            </ListGroup>*/
         );
     }
 }
-
-function mapStateToProps(state: StateType): ITodosState {
-    return {
-        isLoading: state.todosReducer.isLoading,
-        items: state.todosReducer.items,
-        err: state.todosReducer.err
-    };
-}
-
-function mapDispatchToProps(dispatch: TodoThunkDispatch) {
-    return {
-        fetchData: () => dispatch(todosService.getTodos()),
-        toggleTodo: (todoId: number) => dispatch(todosItemToggled(todoId))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

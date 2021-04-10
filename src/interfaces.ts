@@ -34,3 +34,7 @@ export interface IUser {
     website: string;
     company: ICompany;
 }
+
+export interface IConstructor<T extends object> {
+    new(): T
+}

@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Header from './Header'
-import TodoList from '../containers/TodoList'
+import { TodoList } from '../containers/TodoList'
+import { TodosStore } from '../stores'
 
 const App: FunctionComponent = () =>
     <Container>
@@ -14,7 +15,7 @@ const App: FunctionComponent = () =>
         </Row>
         <Row>
             <Col>
-                <TodoList></TodoList>
+                <TodoList store={new TodosStore()}/>
             </Col>
         </Row>
     </Container>
