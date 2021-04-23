@@ -1,10 +1,9 @@
-# Todo app
+# Todo app (больше не redux)
 
 ## Технологический стек
 
 - React
-- Redux
-- Redux Thunk
+- MobX
 - Typescript
 - Axios
 - Bootstrap
